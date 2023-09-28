@@ -1,0 +1,8 @@
+require('plugins')
+require('file-explorer')
+require('tree-sitter')
+require('colors')
+require('custom-keys')
+require('file-finder')
+require('statusbar')
+require('lsp')
