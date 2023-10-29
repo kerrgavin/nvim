@@ -42,4 +42,5 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+	use 'romgrk/barbar.nvim'
 end)
