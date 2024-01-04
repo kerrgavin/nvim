@@ -1,32 +1,28 @@
-return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
-	use {
+return require('lazy').setup({
+	{
 		'nvim-tree/nvim-tree.lua',
-		requires = {
+		dependencies = {
 			'nvim-tree/nvim-web-devicons',
 		}
-	}
-	use {'Mofiqul/dracula.nvim', as = 'dracula'}
-	use {
+	},
+	{'Mofiqul/dracula.nvim', as = 'dracula'},
+	{
 		'nvim-treesitter/nvim-treesitter',
-		run = function()
-			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-			ts_update()
-		end,
-	}
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	use {
+		build = ":TSUpdate"
+	},
+	{
+		'nvim-telescope/telescope.nvim', version = '0.1.4',
+		dependencies = { {'nvim-lua/plenary.nvim'} }
+	},
+	{
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-	use 'gennaro-tedesco/nvim-jqx'
-	use {
+		dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true }
+	},
+	'gennaro-tedesco/nvim-jqx',
+	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
-		requires = {
+		dependencies = {
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},             -- Required
 			{'williamboman/mason.nvim'},           -- Optional
@@ -42,5 +38,10 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-	use 'romgrk/barbar.nvim'
-end)
+},
+{
+	defaults = {
+		lazy = true,
+		version = nil, -- dont use version="*"
+	}
+})
