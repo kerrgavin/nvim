@@ -1,3 +1,6 @@
-vim.keymap.set('n', '<leader>ff', ':lua require"telescope.builtin".find_files({no_ignore=true, hidden=true})<CR>', {})
+vim.keymap.set('n', '<leader>ff', ':lua require"telescope.builtin".find_files({no_ignore=false, hidden=true})<CR>', {})
 vim.keymap.set('n', '<leader>fg', ':lua require"telescope.builtin".live_grep()<CR>', {})
 vim.keymap.set('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<CR>', {})
+vim.keymap.set('n', '<leader>gc', ':lua require"telescope.builtin".git_commits()<CR>', {})
+vim.keymap.set('n', '<leader>gb', ':lua require"telescope.builtin".git_branches()<CR>', {})
+vim.keymap.set('n', '<leader>gs', ':lua require"telescope.builtin".git_status()<CR>', {})
