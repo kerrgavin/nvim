@@ -20,4 +20,4 @@ require('file-finder')
 require('statusbar')
 require('lsp')
 require('clipboard')
-
+require('git')
