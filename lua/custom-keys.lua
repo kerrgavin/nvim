@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.opt.tabstop = 4
+vim.opt.conceallevel = 1
 vim.opt.shiftwidth = 4
 
 -- Move to previous/next
